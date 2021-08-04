@@ -1,0 +1,235 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+
+body{
+    font-family: 'Caveat', cursive;
+}
+
+a{
+    text-decoration:none;
+    color: #41005a;
+   
+}
+
+ul{
+    list-style:none ;
+}
+
+
+/* Estilos header */
+
+header img{
+    width: 100px; 
+}
+
+header{
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;   
+    gap: 20px; 
+}
+
+h1{
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+    border-bottom:2px solid rgb(129, 0, 161);
+    box-shadow: 0px 15px 12px -8px rgba(0, 0, 0, 0.39);
+}
+
+/* Estilos barra de navegación */
+/* Generales */
+nav{
+    font-size: 18px;
+    width: 100%;
+    height: 3em;
+    background-color:rgb(3, 206, 13);
+    border:4px ridge rgb(141, 6, 168);
+    box-shadow:
+    inset 0.2em -0.2em 1em rgba(0,0,0,0.3),
+    inset -0.2em 0.2em 1em rgba(0,0,0,0.3),
+    0px 15px 3px -8px rgba(2, 0, 0, 0.39);           
+    
+    position: sticky;
+    top:0;
+    z-index: 100;
+}
+
+nav>ul{
+    height: 100%;
+    /* Desplegamos la lista del menu en columnas */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav>ul>li{
+    /* Usamos el mismo tamaño de referencia para cada 
+    li y le indicamos que crescan en la misma proporción */
+    flex-basis: 100px;
+    flex-grow: 1;
+
+    text-align: center;
+    /* Indicamos la posición relativa de referencia 
+    para las listas en el segundo nivel */
+    position: relative;  
+
+
+    /* Centramos el contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+/* Estilos a los li de primer nivel  cuando los seleccionamos */
+nav>ul>li:hover{
+    border: 4px ridge rgb(162, 162, 255);
+    border-radius: 20px;
+    box-shadow:
+    inset 5px -5px 5px rgba(0,0,0,0.3),
+    inset -5px 5px 5px rgba(0,0,0,0.3);
+}
+
+/* Ocultamos las listas de segundo nivel o mayor*/
+
+nav li ul{
+    display: none;
+}
+
+/* Estilos de segundo nivel */
+
+/* Estilos a las listas ul de segundo nivel cuando
+son seleccionados los li de primer nivel  */
+
+nav ul>li:hover>ul{
+    width: 100%;
+    background-color:rgb(52, 223, 0);
+    border: 4px ridge rgb(82, 0, 129);
+    box-shadow: 
+    inset 5px -5px 5px rgba(0,0,0,0.3),
+    inset -5px 5px 5px rgba(0,0,0,0.3);
+    
+    display: block;
+    
+    /* Cambiamos la posición de las listas 
+    de segundo nivel a partir de la posicion de los 
+    primeros li*/
+    position: absolute;
+    top: 110%;
+    
+}
+
+/* Estilos a los li de segundo nivel */
+
+nav>ul>li:hover>ul>li{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+/* Estilos a los li de segundo nivel cuando son
+seleccionados
+*/
+
+nav>ul>li:hover>ul>li:hover{
+    box-shadow:
+    inset 5px -5px 5px rgba(0,0,0,0.3),
+    inset -5px 5px 5px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    border: 4px ridge rgb(98, 7, 131);
+  
+}
+
+/* Estilos del carrusel */
+
+
+.carrusel{
+    height: 500px;
+    width: 80%;
+    margin: auto;
+    /* Oculta los elementos en el eje y 
+    si sobrepasan el tamaño 
+    del elemento padre */
+    overflow-y: hidden;
+
+}
+
+.elementos-carrusel{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.tarjetas img{
+    width: 100%;
+    height: 100%;
+}
+
+.tarjetas{
+    height: 100%;
+    width: 100%;
+
+}
+
+.selector-tarjeta{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    position: absolute;
+    top: 0;
+}
+
+.icono-tarjeta {
+    font-size: 40px;
+    color:white;
+}
+
+
+
+main section h2{
+    text-align: center;
+    padding: 20px;
+}
+
+
+.galeria-grid{
+    /* centramos el elemento */
+    width: 80%;
+    margin: auto;
+
+    /* auto-fill ajusta el numero de columnas deacuerdo al tamaño
+     minimo y maximo de las celdas*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-template-rows: repeat(3,200px);
+    gap: 20px;
+}
+
+/* Para que las imagenes ocupen todo el tamaño de las celdas */
+.galeria-grid img{
+    width: 100%;
+    height: 100%;
+}
+
+
+footer{
+    margin-top: 100px;
+    height: 100px;
+    background-color: black;   
+}
+
+footer a{
+    color: white;
+}
